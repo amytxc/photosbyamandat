@@ -1,0 +1,139 @@
+.root {
+    --nav-color: #ffffff;
+    --nav-text: #042A2B;
+    --primary-color: #4EA699;
+    --secondary-color: #615055;
+    --hover-color: #ED6B86;
+}
+
+body {
+    background-color: #e5f4e6;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.nav-bar {
+    background-color: #FFFFFF;
+    color: #042A2B;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 99%;
+    height: 75px;
+    position: fixed;
+    top: 5px;
+    padding: 0px 30px;
+    margin: 0;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0px 15px;
+    padding: 0.5em
+}
+
+.menu a {
+    /* Style links in the navbar menu */
+    color: #042A2B;
+    text-decoration: none;
+}
+
+.menu li:hover,
+.menu li.active {
+    /* Give list item a background color on active/hover */
+    background-color: #ED6B86;
+    border-radius: 2px;
+}
+
+.menu a:hover,
+.menu a:active {
+    /* Change link color on active/hover*/
+    /* Is there a way to make link color change as soon as you hover around it? */
+    color: #e5f4e6; 
+}
+
+.menu-toggle {
+    display: none; /* For smaller screens */
+    font-size: 20px;
+    background: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color:#042A2B;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items:  flex-start;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0px;
+        position: absolute;
+        background-color:#ffffff;
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 10px;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        border-radius: 12px;
+
+    }
+
+    .menu-toggle bar {
+        width: 100%;
+        height: 5px;
+    }
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusts to screen size */
+    gap: 15px; /* Spacing between images */
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Ensure images maintain aspect ratio and fit nicely */
+.image-grid img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+    width: 100%;
+    height: auto; /* Keeps aspect ratio */
+    object-fit: cover; /* Crops if necessary */
+    border-radius: 12px;
+}
+
+/* Hover effect */
+.image-grid img:hover {
+    transform: scale(1.05);
+}
