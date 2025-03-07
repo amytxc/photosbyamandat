@@ -68,7 +68,7 @@ body {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .nav-bar {
         flex-direction: column;
         align-items:  flex-start;
@@ -119,6 +119,8 @@ body {
     width: 90%;
     max-width: 1200px;
     padding: 20px;
+    margin-top: 5rem;
+
 }
 
 /* Ensure images maintain aspect ratio and fit nicely */
@@ -126,7 +128,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 5rem;
     width: 100%;
     height: auto; /* Keeps aspect ratio */
     object-fit: cover; /* Crops if necessary */

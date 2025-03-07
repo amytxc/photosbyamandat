@@ -25,6 +25,7 @@ body {
     margin: 0;
     border-radius: 12px;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .menu {
@@ -68,10 +69,12 @@ body {
 }
 
 /* Media query for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .nav-bar {
+        position: fixed;
         flex-direction: column;
         align-items:  flex-start;
+        z-index: 1;
     }
 
     .menu {
@@ -79,7 +82,7 @@ body {
         flex-direction: column;
         width: 100%;
         padding: 0px;
-        position: absolute;
+        position: fixed;
         background-color:#ffffff;
     }
 
@@ -144,15 +147,24 @@ body {
     color: #FFFFFF;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .hero {
+        display: flex;
+        width: 100%;
+    }
+
+    .hero-image {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        object-fit: cover;
+    }
     .cover-text {
         position: absolute;
         width: 100%;
-        top: 45%;
-        left: 50%;
+        margin: 0;
         text-align: center;
-        padding: 20px;
-        transform: translate(-50%, -50%);
+        transform: translate(-40%, -50%);
         background-color: #0000004f;
         color: #FFFFFF;
     }
@@ -196,7 +208,13 @@ body {
     border-radius: 20%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
+    .about {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+    }
     .me {
         flex-direction: column;
         align-items: center;
@@ -220,3 +238,20 @@ body {
         border-radius: 20%;
     }
 }
+
+/*
+To DO:
+- Fix rounded corners on profile picture
+- Fix profile picture so it doesn't float over menu bar when scrolling
+- Get rid of gaps between images in gallery
+- Change cover text so that it doesn't overlap with menu bar
+- Change cover text so that it's background fills the width
+- Modify hero image so that it is centered
+*/
+
+/*
+FIXES
+
+- Fixed floating cover text/profile pic by giving nav-bar z-index: 1
+
+*/
